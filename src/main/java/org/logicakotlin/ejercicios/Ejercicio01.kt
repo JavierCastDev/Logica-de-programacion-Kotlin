@@ -11,24 +11,24 @@ package org.logicakotlin.ejercicios
  * - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
  */
 
-class Ejercicio_01 {
-    var resultado = ""
+class Ejercicio01 {
+    var j = ""
     fun ejercicioUno() {
         for (i in 1..100) {
             if (i % 3 == 0 && i % 5 == 0) {
-                resultado = "fizzbuzz"
+                j = "fizzbuzz"
             } else if (i % 5 == 0) {
-                resultado = "buzz"
+                j = "buzz"
             } else if (i % 3 == 0) {
-                resultado = "fizz"
+                j = "fizz"
             } else {
-                resultado = ""
+                j = i.toString()
             }
-            println("Numero: " + i + " " + resultado)
+            println("Numero: " + j)
         }
     }
 }
 
 fun main() {
-    Ejercicio_01().ejercicioUno()
+    Ejercicio01().ejercicioUno()
 }
