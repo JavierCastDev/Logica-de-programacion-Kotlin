@@ -14,12 +14,21 @@ package org.logicakotlin.ejercicios
 class Ejercicio02 {
 
     fun esAnagrama(palabraUno: String, palabraDos: String) {
-        if (palabraUno.uppercase().reversed() == palabraDos.uppercase()) {
-            println(true)
-        } else println(false)
+        if (palabraUno.equals(palabraDos, ignoreCase = true)) {
+            println(false)
+        } else {
+            val palabraUnoOrdenada = palabraUno.uppercase().toCharArray().sorted().joinToString("")
+            val palabraDosOrdenada = palabraDos.uppercase().toCharArray().sorted().joinToString("")
+
+            if (palabraUnoOrdenada != palabraDosOrdenada) {
+                println(false)
+            } else {
+                println(true)
+            }
+        }
     }
 }
 
 fun main() {
-    Ejercicio02().esAnagrama("panadero", "oredanap")
+    Ejercicio02().esAnagrama("Capi", "Pica")
 }
